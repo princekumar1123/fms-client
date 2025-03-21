@@ -1,0 +1,11 @@
+<div class="layout">
+    <div class="top_bar">
+        <app-top-menu-bar></app-top-menu-bar>
+    </div>
+    <div class="side_nav">
+        <app-side-nav-bar></app-side-nav-bar>
+    </div>
+    <div class="container_size" [ngClass]="sideBarStatus ? 'shrunkSideBarContent' : 'expendedSideBarContent'">
+        <router-outlet></router-outlet>
+    </div>
+</div>

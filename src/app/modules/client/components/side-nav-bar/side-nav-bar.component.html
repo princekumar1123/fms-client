@@ -1,0 +1,23 @@
+<div class="sidebar-container" [ngClass]="{'collapsed': isCollapsed}">
+    <div class="sidebar-toggle" (click)="toggleSidebar()">
+        <i class="fas fa-chevron-left"></i>
+    </div>
+    <div class="sidebar-content">
+        <div class="brand">
+            <img src="../../../../../assets/fleet.jpg" alt="Music Logo" class="logo" />
+            <span class="brand-name" *ngIf="!isCollapsed">Fleet</span>
+        </div>
+        <nav class="nav-menu">
+            <a class="nav-item pointer" [class.active]="activeItem === 'dashboard'"
+                (click)="navigateTo('/dashboard', 'dashboard')">
+                <i class="fas fa-dollar-sign"></i>
+                <span *ngIf="!isCollapsed">Dash board</span>
+            </a>
+            <a class="nav-item pointer" [class.active]="activeItem === 'orders'"
+                (click)="navigateTo('/order', 'orders')">
+                <i class="fas fa-cog"></i>
+                <span *ngIf="!isCollapsed">Orders</span>
+            </a>
+        </nav>
+    </div>
+</div>

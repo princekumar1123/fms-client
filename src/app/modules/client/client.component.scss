@@ -1,0 +1,38 @@
+.top_bar {
+    margin-top: 0;
+    width: 100vw;
+    position: fixed;
+    flex-shrink: 0;
+    height: 57px;
+    z-index: 10;
+}
+
+.shrunkSideBarContent {
+    margin-top: 51px;
+    margin-left: 71px;
+    width: auto;
+}
+
+.expendedSideBarContent {
+    margin-top: 51px;
+    margin-left: 241px;
+    width: auto;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.side_nav {
+    flex-shrink: 0;
+}
+
+.container_size {
+    flex-grow: 1;
+    overflow-y: auto;
+    // padding: 16px; 
+}
+
