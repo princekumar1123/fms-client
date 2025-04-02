@@ -36,7 +36,7 @@
 // }
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { StateManagementService } from 'src/app/services/state-management.service'; // adjust path as needed
+import { StateManagementService } from 'src/app/services/state-management.service';
 
 @Component({
   selector: 'app-side-nav-bar',
@@ -44,8 +44,8 @@ import { StateManagementService } from 'src/app/services/state-management.servic
   styleUrls: ['./side-nav-bar.component.scss']
 })
 export class SideNavBarComponent {
-  isCollapsed = false;
-  activeItem = 'dashboard';
+  isCollapsed:boolean = false;
+  activeItem:string = 'dashboard';
 
   constructor(
     private router: Router,
@@ -54,8 +54,6 @@ export class SideNavBarComponent {
 
   toggleSidebar(): void {
     this.isCollapsed = !this.isCollapsed;
-
-    // 🔄 Update global state when sidebar is toggled
     this.stateManagementServiceRef.setSidebarStatus(this.isCollapsed);
   }
 

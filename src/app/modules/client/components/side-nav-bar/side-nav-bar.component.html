@@ -10,13 +10,28 @@
         <nav class="nav-menu">
             <a class="nav-item pointer" [class.active]="activeItem === 'dashboard'"
                 (click)="navigateTo('/dashboard', 'dashboard')">
-                <i class="fas fa-dollar-sign"></i>
+                <i class="bi bi-graph-up"></i>
                 <span *ngIf="!isCollapsed">Dash board</span>
             </a>
             <a class="nav-item pointer" [class.active]="activeItem === 'orders'"
                 (click)="navigateTo('/order', 'orders')">
-                <i class="fas fa-cog"></i>
+                <i class="fas fa-shopping-cart"></i>
                 <span *ngIf="!isCollapsed">Orders</span>
+            </a>
+            <a class="nav-item pointer" [class.active]="activeItem === 'vehicle'"
+                (click)="navigateTo('/vehicle', 'vehicle')">
+                <i class="fas fa-truck"></i>
+                <span *ngIf="!isCollapsed">Vehicle</span>
+            </a>
+            <a class="nav-item pointer" [class.active]="activeItem === 'driver'"
+                (click)="navigateTo('/driver', 'driver')">
+                <i class="fas fa-user"></i>
+                <span *ngIf="!isCollapsed">Driver</span>
+            </a>
+            <a class="nav-item pointer" [class.active]="activeItem === 'settings'"
+                (click)="navigateTo('/settings', 'settings')">
+                <i class="bi bi-gear-fill"></i>
+                <span *ngIf="!isCollapsed">Settings</span>
             </a>
         </nav>
     </div>

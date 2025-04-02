@@ -6,6 +6,10 @@ import { SideNavBarComponent } from './components/side-nav-bar/side-nav-bar.comp
 import { TopMenuBarComponent } from './components/top-menu-bar/top-menu-bar.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { OrderComponent } from './pages/order/order.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 // const routes: Routes = [{
 //   path: "", component: ClientComponent,
@@ -32,11 +36,17 @@ const routes: Routes = [
   declarations: [
     ClientComponent,
     SideNavBarComponent,
-    TopMenuBarComponent
+    TopMenuBarComponent,
+    DashboardComponent,
+    OrderComponent
   ],
   imports: [
     CommonModule,
     RouterOutlet,
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    NgbPaginationModule,
     RouterModule.forChild(routes)
 
   ]

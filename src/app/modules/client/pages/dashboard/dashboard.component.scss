@@ -1,17 +1,9 @@
-.body{
-    height: 86vh;
-    width: 158vh;
-    overflow-y: scroll;
-    scrollbar-width: none;
-  }
-  .homeIconGradient{
-      background-image:linear-gradient(to right,#D688FF,#B86FFF,#A35DFF);
-      color: white;
-      
-  }
-  .card{
-    width: 300px;
-    height: 100px;
-    border: none;
-  }
-  
+.homeIconGradient{
+    background-image:linear-gradient(to right,#D688FF,#B86FFF,#A35DFF);
+    color: white;
+    
+}
+.card{
+  height: 110px;
+  border: none;
+}

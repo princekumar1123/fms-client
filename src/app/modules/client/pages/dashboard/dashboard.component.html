@@ -1,1 +1,90 @@
-<p>dashboard works!</p>
+<div class="p-3">
+    <div class="body border rounded">
+        <div class="d-flex p-2 bg-light border-bottom">
+            <div class="homeIconGradient border rounded px-2">
+                <i class="bi bi-graph-up"></i>
+            </div>
+            &nbsp;Dash board
+        </div>
+        <div class="p-1 d-flex flex-wrap">
+            <div *ngFor="let data of userData;" class="p-2 mt-2">
+                <div class="card d-flex flex-row justify-content-around" [style.width.px]="sidebarStatus ? 277 : 307"
+                    [style.background-color]="data.color">
+                    <div class="d-flex flex-column align-items-center justify-content-center gap-2">
+                        <div class="text-light  w-100 text-start">
+                            {{ data.name }}
+                        </div>
+                        <div class="">
+                            <div class="d-flex gap-1">
+                                <div class="text-light fw-bold fs-1">{{data.count}}</div>
+                                <span class="text-light fw-bold d-flex align-items-center" *ngIf="data.name==='Orders'">
+                                    /per day</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i [class]="data.icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="w-50 px-4">
+                <h4 class="px-4">#Delivered Manifest</h4>
+                <div class="chart-container">
+                    <canvas id="barChart"></canvas>
+                </div>
+            </div>
+            <div class="pieChart d-flex px-4">
+                <h4 class="px-4">%Delivered Orders</h4>
+                <div class="chart-container">
+                    <canvas id="pieChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="p-3">
+            <h4>Pending Order List</h4>
+            <div class="d-flex justify-content-between">
+                <div class="w-25 input-group mb-3 ">
+                    <span class="input-group-text" id="basic-addon1">Search Here</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                        aria-describedby="basic-addon1">
+                </div>
+                <div>
+                    <button mat-stroked-button>Basic</button>
+                </div>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th *ngFor="let colData of tableColumnData" scope="col">{{ colData.text }}</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let data of orderList">
+                    <tr>
+                        <th scope="row">{{ data.orderNo }}</th>
+                        <td>{{ data.customerName }}</td>
+                        <td>{{ data.deliveryDate }}</td>
+                        <td>{{ data.ETA }}</td>
+                        <td>{{ data.city }}</td>
+                        <td>{{ data.orderStatus }}</td>
+                        <td>{{ data.paymentStatus }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-between p-2">
+                <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
+                    (pageChange)="refreshCountries()">
+                </ngb-pagination>
+
+                <select class="form-select" style="width: auto" [(ngModel)]="pageSize"
+                    (ngModelChange)="refreshCountries()">
+                    <option [ngValue]="2">2 items per page</option>
+                    <option [ngValue]="4">4 items per page</option>
+                    <option [ngValue]="6">6 items per page</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
